@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Category, Subcategory, MetaProduct, \
-    UnitOfMeasurement
+    UnitOfMeasurement, Product
 
 
 @admin.register(Category)
@@ -22,3 +22,9 @@ class MetaProductAdmin(admin.ModelAdmin):
 @admin.register(UnitOfMeasurement)
 class UnitOfMeasurementAdmin(admin.ModelAdmin):
     list_display = ('symbol',)
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('meta_product', 'measure', 'package',
+                    'price', 'availability')

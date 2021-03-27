@@ -44,3 +44,20 @@ class UnitOfMeasurement(Model):
         return self.symbol
 
 
+class Product(Model):
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
+
+    meta_product = ForeignKey(MetaProduct, on_delete=CASCADE,
+                              null=False, blank=False)
+    measure = ForeignKey(UnitOfMeasurement, on_delete=CASCADE,
+                         null=False, blank=False)
+    package = PositiveSmallIntegerField(verbose_name='Package size',
+                                        null=False, blank=False)
+    price = DecimalField(max_digits=6, decimal_places=2)
+    availability = IntegerField(null=False, blank=False)
+
+
+
+
