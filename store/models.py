@@ -35,3 +35,12 @@ class MetaProduct(Model):
 
     def __str__(self):
         return self.name
+
+
+class UnitOfMeasurement(Model):
+    symbol = CharField(max_length=10, unique=True)
+
+    def __str__(self):
+        return self.symbol
+
+

@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Category, Subcategory, MetaProduct
+from .models import Category, Subcategory, MetaProduct, \
+    UnitOfMeasurement
 
 
 @admin.register(Category)
@@ -16,3 +17,8 @@ class SubcategoryAdmin(admin.ModelAdmin):
 @admin.register(MetaProduct)
 class MetaProductAdmin(admin.ModelAdmin):
     list_display = ('subcategory', 'name', 'description', 'image')
+
+
+@admin.register(UnitOfMeasurement)
+class UnitOfMeasurementAdmin(admin.ModelAdmin):
+    list_display = ('symbol',)
