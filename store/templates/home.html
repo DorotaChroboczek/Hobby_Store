@@ -1,0 +1,16 @@
+{% load static %}
+{% block content %}
+<div>
+    {% if categories %}
+        <div>
+            {% for category in categories %}
+                <div>
+                    <div><img src="{{category.imageURL}}"></div>
+                    <div>{{ category.name }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
