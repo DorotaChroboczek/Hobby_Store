@@ -12,6 +12,14 @@ class Category(Model):
     def __str__(self):
         return self.name
 
+    @property
+    def imageURL(self):
+        if self.image:
+            url = self.image.url
+        else:
+            url = ''
+        return url
+
 
 class Subcategory(Model):
     category = ForeignKey(Category, on_delete=CASCADE)
