@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Category, Subcategory, MetaProduct, \
-    UnitOfMeasurement, Product
+    UnitOfMeasurement, Product, ProductPromotion
 
 
 @admin.register(Category)
@@ -28,3 +28,10 @@ class UnitOfMeasurementAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('meta_product', 'measure', 'package',
                     'price', 'availability')
+
+
+@admin.register(ProductPromotion)
+class ProductPromotionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'package', 'measure', 'price',
+                    'standard_price', 'percentage_of_the_promotion')
+

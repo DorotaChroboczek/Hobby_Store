@@ -59,5 +59,30 @@ class Product(Model):
     availability = IntegerField(null=False, blank=False)
 
 
+class ProductPromotion(Model):
+    product = OneToOneField(Product, on_delete=CASCADE)
+    price = DecimalField(max_digits=6, decimal_places=2)
+
+    @property
+    def name(self):
+        return self.product.meta_product
+
+    @property
+    def measure(self):
+        return self.product.measure
+
+    @property
+    def package(self):
+        return self.product.package
+
+    @property
+    def standard_price(self):
+        return self.product.price
+
+    @property
+    def percentage_of_the_promotion(self):
+        value_in_percents = round((self.product.price / self.price) * 10)
+        return value_in_percents
+
 
 
