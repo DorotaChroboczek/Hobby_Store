@@ -1,16 +1,39 @@
+{% extends 'main.html' %}
 {% load static %}
 {% block content %}
+
 <div>
-    {% if categories %}
-        <div>
-            {% for category in categories %}
-                <div>
-                    <div><img src="{{category.imageURL}}"></div>
-                    <div>{{ category.name }}</div>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
+    <div class="menu-box">
+        OVERCATEGORIES
+        {% if overcategories %}
+            <div class="menu-ocs">
+                {% for overcategory in overcategories %}
+                    <ul class="menu-oc">
+                        <li>{{ overcategory.name }}</li>
+                        {% for category in overcategory.categories %}
+                            <ul class="menu-c">
+                                <li>{{ category.name }}</li>
+                            </ul>
+                        {%  endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div>
+        CATEGORIES
+        {% if categories %}
+            <div>
+                {% for category in categories %}
+                    <div>
+                        <div><img src="{{category.imageURL}}"></div>
+                        <div>{{ category.name }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}

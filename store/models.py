@@ -11,6 +11,11 @@ class Overcategory(Model):
     def __str__(self):
         return self.name
 
+    @property
+    def categories(self):
+        categories = self.category_set.all()
+        return categories
+
 
 class Category(Model):
     class Meta:
