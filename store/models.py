@@ -1,6 +1,14 @@
 from django.db.models import *
 
 
+class Overcategory(Model):
+    class Meta:
+        verbose_name = 'Overcategory'
+        verbose_name_plural = 'Overcategories'
+
+    name = CharField(max_length=100)
+
+
 class Category(Model):
     class Meta:
         verbose_name = 'Category'
