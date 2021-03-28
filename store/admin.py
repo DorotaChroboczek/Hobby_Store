@@ -1,12 +1,17 @@
 from django.contrib import admin
 
-from .models import Category, Subcategory, MetaProduct, \
+from .models import Overcategory, Category, Subcategory, MetaProduct, \
     UnitOfMeasurement, Product, ProductPromotion
+
+
+@admin.register(Overcategory)
+class OvercategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'image')
+    list_display = ('name', 'overcategory', 'image')
 
 
 @admin.register(Subcategory)

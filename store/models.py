@@ -1,12 +1,24 @@
 from django.db.models import *
 
 
+class Overcategory(Model):
+    class Meta:
+        verbose_name = 'Overcategory'
+        verbose_name_plural = 'Overcategories'
+
+    name = CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Category(Model):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
     name = CharField(max_length=50)
+    overcategory = ForeignKey(Overcategory, on_delete=CASCADE)
     image = ImageField(null=True, blank=True)
 
     def __str__(self):
