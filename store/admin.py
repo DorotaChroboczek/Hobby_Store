@@ -11,7 +11,7 @@ class OvercategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'image')
+    list_display = ('name', 'overcategory', 'image')
 
 
 @admin.register(Subcategory)
