@@ -3,7 +3,7 @@
 {% block content %}
 
 <div>
-    <div class="menu-box">
+    <div class="row">
         OVERCATEGORIES
         {% if overcategories %}
             <div class="menu-ocs">
@@ -21,14 +21,14 @@
         {% endif %}
     </div>
 
-    <div>
+    <div class="row">
         CATEGORIES
         {% if categories %}
             <div>
                 {% for category in categories %}
-                    <div>
-                        <div><img src="{{category.imageURL}}"></div>
-                        <div>{{ category.name }}</div>
+                    <div class="col-lg-2">
+                        <div><img class="thumbnail" src="{{category.imageURL}}"></div>
+                        <div class="box-element category">{{ category.name }}</div>
                     </div>
                 {% endfor %}
             </div>
