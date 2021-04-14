@@ -2,38 +2,21 @@
 {% load static %}
 {% block content %}
 
-<div>
     <div class="row">
-        OVERCATEGORIES
-        {% if overcategories %}
-            <div class="menu-ocs">
-                {% for overcategory in overcategories %}
-                    <ul class="menu-oc">
-                        <li>{{ overcategory.name }}</li>
-                        {% for category in overcategory.categories %}
-                            <ul class="menu-c">
-                                <li>{{ category.name }}</li>
-                            </ul>
-                        {%  endfor %}
-                    </ul>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
+        {% for meta_product in meta_products %}
 
-    <div class="row">
-        CATEGORIES
-        {% if categories %}
-            <div>
-                {% for category in categories %}
-                    <div class="col-lg-2">
-                        <div><img class="thumbnail" src="{{category.imageURL}}"></div>
-                        <div class="box-element category">{{ category.name }}</div>
-                    </div>
-                {% endfor %}
+            <div class="col-lg-4">
+                <img class="img-thumbnail" alt="..." src="{{ meta_product.imageURL }}">
+                <div class="box-element product">
+                    <p><strong>{{ meta_product.name }}</strong></p>
+        {#            <p>{{ meta_product.overcategory }} > {{ meta_product.category }} > {{ meta_product.subcategory }}</p>#}
+{#                    <a href="{{ meta_product.get_absolute_url }}">More...</a>#}
+                    <hr>
+                    <a class="btn btn-outline-success" href="#">View</a>
+                </div>
             </div>
-        {% endif %}
+
+        {% endfor %}
     </div>
-</div>
 
 {% endblock %}
