@@ -77,104 +77,88 @@
                                     <li>
                                         <a id="link4" href="#">Modeling</a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">Animals</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Magic Creatures</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Warriors</a>
-                                            </li>
+                                            {% for  c_modeling in c_modelings %}
+                                                <li>
+                                                    <a href="#">{{ c_modeling.name }}</a>
+                                                </li>
+                                            {%  endfor %}
                                         </ul>
                                     </li>
 
                                     <li>
                                         <a id="link4" href="#">Sculpture</a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">Carving Materials</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Chisels</a>
-                                            </li>
+                                            {% for  c_sculpture in c_sculptures %}
+                                                <li>
+                                                    <a href="#">{{ c_sculpture.name }}</a>
+                                                </li>
+                                            {%  endfor %}
                                         </ul>
                                     </li>
 
                                     <li>
                                         <a id="link4" href="#">Painting</a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">Chalks</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Crayons</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Easels</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Paints</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Pencils</a>
-                                            </li>
+                                            {% for  c_painting in c_paintings %}
+                                                <li>
+                                                    <a href="#">{{ c_painting.name }}</a>
+                                                </li>
+                                            {%  endfor %}
                                         </ul>
                                     </li>
 
                                     <li>
                                         <a id="link4" href="#">Photography</a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">Camera</a>
-                                            </li>
+                                            {% for  c_photo in c_photos %}
+                                                <li>
+                                                    <a href="#">{{ c_photo.name }}</a>
+                                                </li>
+                                            {%  endfor %}
                                         </ul>
                                     </li>
 
                                     <li>
                                         <a id="link4" href="#">Writing</a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">Sklep</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sklep</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sklep</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sklep</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sklep</a>
-                                            </li>
+                                            {% for c_writing in c_writings %}
+                                                <li>
+                                                    <a href="#">{{ c_writing.name }}</a>
+                                                </li>
+                                            {%  endfor %}
                                         </ul>
                                     </li>
 
                                     <li>
                                         <a id="link4" href="#">Landscape Modeling</a>
                                         <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">Mats</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Plants</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Trains</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Trees</a>
-                                            </li>
+                                            {% for c_landscape in c_landscapes %}
+                                                <li>
+                                                    <a href="#">{{ c_landscape.name }}</a>
+                                                </li>
+                                            {%  endfor %}
                                         </ul>
                                     </li>
 
                                     <li>
-                                        <a href="#">Zestawy</a>
+                                        <a id="link4" href="#">Gift Sets</a>
+                                        <ul class="sub-menu">
+                                            {% for c_giftset in c_giftsets %}
+                                                <li>
+                                                    <a href="#">{{ c_giftset.name }}</a>
+                                                </li>
+                                            {%  endfor %}
+                                        </ul>
                                     </li>
                                     <li>
-                                        <a href="#">Promocje</a>
+                                        <a id="link4" href="#">Sales</a>
+                                        <ul class="sub-menu">
+                                            {% for c_sale in c_sales %}
+                                                <li>
+                                                    <a href="#">{{ c_sale.name }}</a>
+                                                </li>
+                                            {%  endfor %}
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
