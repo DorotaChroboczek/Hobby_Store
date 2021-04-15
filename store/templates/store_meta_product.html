@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="meta_product-box">
+            <div class="meta_product-img">
+                <img class="thumbnail" src="{{ meta_product.imageURL }}">
+            </div>
+            <p class="meta_product-name"><strong>{{ meta_product.name }}</strong></p>
+    </div>
+
+    <div class="row">
+        {% for product in products %}
+            <div class="col-lg-4">
+                <div class="box-element product">
+                    <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <h4 style="display: inline-block; float: right"><strong>${{ product.price|floatformat:2 }}</strong></h4>
+                    <h4>{{ product.package }} {{ product.measure }}</h4>
+                    <h4>Availability: {{ product.availability }}</h4>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+    <div class="description-box">
+        <div class="description-text">
+            {{ meta_product.description }}
+        </div>
+    </div>
+
+{% endblock %}

@@ -12,7 +12,10 @@
         {#            <p>{{ meta_product.overcategory }} > {{ meta_product.category }} > {{ meta_product.subcategory }}</p>#}
 {#                    <a href="{{ meta_product.get_absolute_url }}">More...</a>#}
                     <hr>
-                    <a class="btn btn-outline-success" href="#">View</a>
+                    <a class="btn btn-outline-success"
+                       href="{% url 'store:store_meta_product' meta_product.id %}">
+                        View
+                    </a>
                 </div>
             </div>
 
