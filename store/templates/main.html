@@ -49,131 +49,114 @@
     </nav>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="nicdark_site nicdark_front_page">
           <!--start header-->
             <div class="nicdark_menu_type_3 ">
             <!--start container-->
-                <div class="nicdark_container">
+{#                <div class="nicdark_container">#}
+
                     <div class="grid_12 percentage nicdark_menu_center">
+
                         <div class="nicdark_space70">
                         </div>
-                        <!--logo responsive-->
-                        <img class="header_type_3_logo_responsive" src="">
-                        <!--logo responsive-->
 
-                        <!--navbar-center-->
-                        <div class="nicdark_relative grid_2">
-                          <a href="#"><img class="zoom_2"
-                              style="width:100%; margin-top: -70px; height: auto;position: absolute; left: 0px;"
-                              src=""></a>
-                        </div>
-                        <!--navbar-center-->
-                        <!--navbar-right-->
-                        <div class="grid_12 nicdark_left">
-                            <div class="menu-prawe-menu-container">
-                                <ul class="menu">
+                        <div class="menu-container">
+                            <ul class="menu">
 
-                                    <li>
-                                        <a id="link4" href="#">Modeling</a>
-                                        <ul class="sub-menu">
-                                            {% for  c_modeling in c_modelings %}
-                                                <li>
-                                                    <a href="{% url 'store:category' c_modeling.id %}">{{ c_modeling.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Modeling</a>
+                                    <ul class="sub-menu">
+                                        {% for  c_modeling in c_modelings %}
+                                            <li>
+                                                <a href="{% url 'store:category' c_modeling.id %}">{{ c_modeling.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
 
-                                    <li>
-                                        <a id="link4" href="#">Sculpture</a>
-                                        <ul class="sub-menu">
-                                            {% for  c_sculpture in c_sculptures %}
-                                                <li>
-                                                    <a href="#">{{ c_sculpture.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Sculpture</a>
+                                    <ul class="sub-menu">
+                                        {% for  c_sculpture in c_sculptures %}
+                                            <li>
+                                                <a href="#">{{ c_sculpture.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
 
-                                    <li>
-                                        <a id="link4" href="#">Painting</a>
-                                        <ul class="sub-menu">
-                                            {% for  c_painting in c_paintings %}
-                                                <li>
-                                                    <a href="#">{{ c_painting.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Painting</a>
+                                    <ul class="sub-menu">
+                                        {% for  c_painting in c_paintings %}
+                                            <li>
+                                                <a href="#">{{ c_painting.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
 
-                                    <li>
-                                        <a id="link4" href="#">Photography</a>
-                                        <ul class="sub-menu">
-                                            {% for  c_photo in c_photos %}
-                                                <li>
-                                                    <a href="#">{{ c_photo.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Photography</a>
+                                    <ul class="sub-menu">
+                                        {% for  c_photo in c_photos %}
+                                            <li>
+                                                <a href="#">{{ c_photo.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
 
-                                    <li>
-                                        <a id="link4" href="#">Writing</a>
-                                        <ul class="sub-menu">
-                                            {% for c_writing in c_writings %}
-                                                <li>
-                                                    <a href="#">{{ c_writing.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Writing</a>
+                                    <ul class="sub-menu">
+                                        {% for c_writing in c_writings %}
+                                            <li>
+                                                <a href="#">{{ c_writing.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
 
-                                    <li>
-                                        <a id="link4" href="#">Landscape Modeling</a>
-                                        <ul class="sub-menu">
-                                            {% for c_landscape in c_landscapes %}
-                                                <li>
-                                                    <a href="#">{{ c_landscape.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Landscape Modeling</a>
+                                    <ul class="sub-menu">
+                                        {% for c_landscape in c_landscapes %}
+                                            <li>
+                                                <a href="#">{{ c_landscape.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
 
-                                    <li>
-                                        <a id="link4" href="#">Gift Sets</a>
-                                        <ul class="sub-menu">
-                                            {% for c_giftset in c_giftsets %}
-                                                <li>
-                                                    <a href="#">{{ c_giftset.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a id="link4" href="#">Sales</a>
-                                        <ul class="sub-menu">
-                                            {% for c_sale in c_sales %}
-                                                <li>
-                                                    <a href="#">{{ c_sale.name }}</a>
-                                                </li>
-                                            {%  endfor %}
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        <div>
-                            <ul style="margin:0px;" class="menu">
-                              <li style="padding:15px; margin:0px;">
-                                  <a style="margin:0px;" class="zoom"
-                                  href="#"><img style="width: 30px; margin-top:  0px;" src=""></a>
-                              </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Gift Sets</a>
+                                    <ul class="sub-menu">
+                                        {% for c_giftset in c_giftsets %}
+                                            <li>
+                                                <a href="#">{{ c_giftset.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
+                                <li class="ovcat-li">
+                                    <a id="link4" class="ovcat" href="#">Sales</a>
+                                    <ul class="sub-menu">
+                                        {% for c_sale in c_sales %}
+                                            <li>
+                                                <a href="#">{{ c_sale.name }}</a>
+                                            </li>
+                                        {%  endfor %}
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
+
+                        <div class="nicdark_space70">
+
                     </div>
                 <!--navbar-right-->
-              </div>
-                </div>
             </div>
         </div>
     </nav>

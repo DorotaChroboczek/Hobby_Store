@@ -2,7 +2,11 @@
 {% load static %}
 {% block content %}
 
-    <p><a href="{% url 'store:home' %}">Store</a> / <a href="{% url 'store:category' category.id %}">{{ category.name }}</a></p>
+    <div class="path">
+        <p class="path-text"><a href="{% url 'store:home' %}">Store</a>
+            / <a href="{% url 'store:category' category.id %}">{{ category.name }}</a></p>
+    </div>
+
 
     <div class="category-box">
         <p class="category-name">{{ category.name }}</p>

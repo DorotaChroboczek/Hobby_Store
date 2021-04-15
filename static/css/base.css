@@ -1,11 +1,14 @@
 body{
 	background-color: hsl(0, 0%, 98%);
+	/*	7C605A*/
+/*	#63463F*/
+/*	background-color: whitesmoke;*/
 	padding: 40px;
 }
 
-h1,h2,h3,h4,h5,h6{
-	color:hsl(0, 0%, 30%);
-}
+/*h1,h2,h3,h4,h5,h6{*/
+/*	color:hsl(0, 0%, 30%);*/
+/*}*/
 
 .box-element{
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
@@ -71,7 +74,7 @@ h1,h2,h3,h4,h5,h6{
 
 .menu .sub-menu {
     background-color: white;
-    border-radius: 25px;
+	border-radius: 13px;
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
 }
@@ -234,10 +237,29 @@ h1,h2,h3,h4,h5,h6{
 	position: relative;
 }
 
+.grid_12.percentage > .menu-container {
+	width: 100%;
+}
+
+.grid_12.percentage > .menu-container > .menu {
+	width: 100%;
+}
+
+.menu > .ovcat-li {
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*.ovcat-li {*/
+/*	margin: 75px;*/
+/*}*/
+
 .menu ul {
 	position: absolute;
 	display: none;
 	top: 100%;
+	justify-content: space-between;
+	align-items: center;
 	margin-left: -25px;
 	z-index: 99;
 	min-width: 12em;
@@ -249,11 +271,16 @@ h1,h2,h3,h4,h5,h6{
 	display: block;
 }
 
-.navbar-brand {
+.container-fluid > .navbar-brand {
 	font-family: Mael;
 	font-size: 33px;
 	color: darkolivegreen;
+}
 
+.nav-item > .nav-link {
+	font-family: 'Raleway', sans-serif;;
+	font-size: 17px;
+	color: darkolivegreen;
 }
 
 .category-box {
@@ -324,6 +351,18 @@ h1,h2,h3,h4,h5,h6{
 	align-items: center;
 }
 
+.path-text > a {
+	color: rebeccapurple;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+}
+
+.navbar-expand-lg {
+	background-color: rgb(250, 250, 250);
+	border-radius: 3px;
+
+}
+
 .nicdark_menu_type_3 .menu  > li > a:after {
 	content: none;
 }
@@ -333,22 +372,28 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .nicdark_menu_type_3 .menu  > li {
-	padding: 20px 10px;
-	margin: 0px 10px;
+	padding: 25px 15px;
+	margin: 0 10px;
 }
+
+.menu {
+	display: flex;
+	justify-content: space-around;
+}
+
 
 .nicdark_menu_type_3 .nicdark_right .menu, .nicdark_menu_type_3 .nicdark_right .menu > li {
 	float: right;
 }
 
-.nicdark_container {
-	width: 1200px;
-	margin:auto;
-	padding: 0px;
-}
+/*.nicdark_container {*/
+/*	width: 1200px;*/
+/*	margin:auto;*/
+/*	padding: 0px;*/
+/*}*/
 
 .nicdark_site {
-	float: left;
+	float: right;
 	width: 100%;
 	-webkit-transition: all 0.8s ease;
 	-moz-transition: all 0.8s ease;
@@ -371,6 +416,7 @@ h1,h2,h3,h4,h5,h6{
 .grid_12.percentage {
 	width:100%;
 }
+
 
 .grid_2 {
 	width:180px;
