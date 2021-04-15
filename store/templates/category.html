@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="category-box">
+        <p class="category-name">{{ category.name }}</p>
+    </div>
+
+    <div class="row">
+        {% for subcategory in subcategories %}
+
+            <div class="col-lg-4">
+                <img class="img-thumbnail" alt="..." src="{{ subcategory.imageURL }}">
+                <div class="box-element product">
+                    <p><strong>{{ subcategory.name }}</strong></p>
+                    <hr>
+                    <a class="btn btn-outline-success" href="#">View</a>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

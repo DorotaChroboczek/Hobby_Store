@@ -253,6 +253,22 @@ h1,h2,h3,h4,h5,h6{
 	font-family: Mael;
 	font-size: 33px;
 	color: darkolivegreen;
+
+}
+
+.category-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.category-name {
+	font-family: Mael;
+	font-weight: 300;
+	font-size: 27px;
+	color: darkolivegreen;
+	justify-content: center;
+	align-items: center;
 }
 
 .nicdark_menu_type_3 .menu  > li > a:after {
