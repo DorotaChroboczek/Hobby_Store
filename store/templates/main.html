@@ -80,7 +80,7 @@
                                     <ul class="sub-menu">
                                         {% for  c_sculpture in c_sculptures %}
                                             <li>
-                                                <a href="#">{{ c_sculpture.name }}</a>
+                                                <a href="{% url 'store:category' c_sculpture.id %}">{{ c_sculpture.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
@@ -91,7 +91,7 @@
                                     <ul class="sub-menu">
                                         {% for  c_painting in c_paintings %}
                                             <li>
-                                                <a href="#">{{ c_painting.name }}</a>
+                                                <a href="{% url 'store:category' c_painting.id %}">{{ c_painting.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
@@ -102,7 +102,7 @@
                                     <ul class="sub-menu">
                                         {% for  c_photo in c_photos %}
                                             <li>
-                                                <a href="#">{{ c_photo.name }}</a>
+                                                <a href="{% url 'store:category' c_photo.id %}">{{ c_photo.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
@@ -113,7 +113,7 @@
                                     <ul class="sub-menu">
                                         {% for c_writing in c_writings %}
                                             <li>
-                                                <a href="#">{{ c_writing.name }}</a>
+                                                <a href="{% url 'store:category' c_writing.id %}">{{ c_writing.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
@@ -124,7 +124,7 @@
                                     <ul class="sub-menu">
                                         {% for c_landscape in c_landscapes %}
                                             <li>
-                                                <a href="#">{{ c_landscape.name }}</a>
+                                                <a href="{% url 'store:category' c_landscape.id %}">{{ c_landscape.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
@@ -135,7 +135,7 @@
                                     <ul class="sub-menu">
                                         {% for c_giftset in c_giftsets %}
                                             <li>
-                                                <a href="#">{{ c_giftset.name }}</a>
+                                                <a href="{% url 'store:category' c_giftset.id %}">{{ c_giftset.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
@@ -145,7 +145,7 @@
                                     <ul class="sub-menu">
                                         {% for c_sale in c_sales %}
                                             <li>
-                                                <a href="#">{{ c_sale.name }}</a>
+                                                <a href="{% url 'store:category' c_sale.id %}">{{ c_sale.name }}</a>
                                             </li>
                                         {%  endfor %}
                                     </ul>
