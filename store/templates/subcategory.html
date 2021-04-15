@@ -20,7 +20,8 @@
                 <div class="box-element product">
                     <p><strong>{{ meta_product.name }}</strong></p>
                     <hr>
-                    <a class="btn btn-outline-success" href="#">View</a>
+                    <a class="btn btn-outline-success"
+                       href="{% url 'store:meta_product' c_id=category.id sc_id=subcategory.id mp_id=meta_product.id %}">View</a>
                 </div>
             </div>
 

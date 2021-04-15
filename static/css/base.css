@@ -271,6 +271,59 @@ h1,h2,h3,h4,h5,h6{
 	align-items: center;
 }
 
+.description-box {
+	width:1200px;
+    margin: 20px auto;
+    padding:20px;
+	/*background-color: blanchedalmond;*/
+	background-color: whitesmoke;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0 rgba(0,0,0,0.75);
+}
+
+.description-box > .description-text {
+	margin: 10px;
+    padding: 20px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	color: darkolivegreen;
+}
+
+.meta_product-box {
+	width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.meta_product-box > .meta_product-name {
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.meta_product-box > .meta_product-img {
+	/*justify-content: center;*/
+	/*align-items: center;*/
+	text-align: center;
+}
+
+.meta_product-img > .thumbnail {
+	box-shadow: 6px 2px 30px 0 rgba(0,0,0,0.75);
+	justify-content: center;
+	align-items: center;
+}
+
+.meta_product-name {
+	font-family: 'Raleway', sans-serif;
+	font-size: 23px;
+	color: darkolivegreen;
+	justify-content: center;
+	align-items: center;
+}
+
 .nicdark_menu_type_3 .menu  > li > a:after {
 	content: none;
 }
