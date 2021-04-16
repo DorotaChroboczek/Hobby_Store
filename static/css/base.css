@@ -299,13 +299,14 @@ body{
 }
 
 .description-box {
+	/*width: auto;*/
 	width:1200px;
     margin: 20px auto;
     padding:20px;
 	/*background-color: blanchedalmond;*/
-	background-color: whitesmoke;
+	/*background-color: whitesmoke;*/
     border-radius: 3px;
-    box-shadow: 6px 2px 30px 0 rgba(0,0,0,0.75);
+    box-shadow: 3px 2px 8px 0 rgba(0,0,0,0.75);
 }
 
 .description-box > .description-text {
@@ -316,12 +317,34 @@ body{
 	color: darkolivegreen;
 }
 
-.meta_product-box {
-	width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-	justify-content: center;
+.description-text {
+	border: 1px solid olivedrab;
+}
+
+.meta_product-container {
+	/*display: inline-block;*/
+	/*display: block;*/
+	display: flex;
+
+	justify-content: space-around;
+
 	align-items: center;
+
+	border-radius: 3px;
+	margin: 50px;
+	padding: 50px;
+}
+
+.meta_product-box {
+	width: 60%;
+	margin: 20px;
+	padding: 30px;
+}
+
+.choose-box {
+	width: 40%;
+	margin: 20px;
+	padding: 30px;
 }
 
 .meta_product-box > .meta_product-name {
@@ -337,8 +360,7 @@ body{
 	text-align: center;
 }
 
-.meta_product-img > .thumbnail {
-	box-shadow: 6px 2px 30px 0 rgba(0,0,0,0.75);
+.meta_product-img > .img-thumbnail {
 	justify-content: center;
 	align-items: center;
 }
@@ -349,6 +371,56 @@ body{
 	color: darkolivegreen;
 	justify-content: center;
 	align-items: center;
+}
+
+.product-box {
+	display: flex;
+	font-family: 'Raleway', sans-serif;
+}
+
+.product-box > p {
+	justify-content: center;
+	align-items: center;
+}
+
+label {
+	display: flex;
+}
+
+label > .product-package {
+	margin-top: 11px;
+}
+
+label > .product-type, .product-availability {
+	margin-left: 9px;
+	margin-top: 5px;
+	/*margin: 0 5px 0 5px;*/
+}
+
+.packages-sizes {
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	color: darkolivegreen;
+}
+
+.product-availability {
+	display: flex;
+}
+
+.product-availability > .product-availability-loop {
+	margin-left: 9px;
+}
+
+.product-box > label > .product-availability > .product-availability-loop > .availability-green {
+	color: olivedrab;
+}
+
+.product-box > label > .product-availability > .product-availability-loop > .availability-yellow {
+	color: yellow;
+}
+
+.product-box > label > .product-availability > .product-availability-loop > .availability-red {
+	color: red;
 }
 
 .path-text > a {

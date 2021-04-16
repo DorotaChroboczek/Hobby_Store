@@ -116,9 +116,11 @@ class StoreMetaProductView(ListView):
         context = super().get_context_data(**kwargs)
         meta_product = get_object_or_404(MetaProduct, id=self.kwargs['id'])
         products = Product.objects.filter(meta_product=meta_product).all()
+        category = meta_product.category
         context = {
             'meta_product': meta_product,
             'products': products,
+            'category': category,
             'overcategories': Overcategory.objects.all(),
             'c_modelings': Category.objects.filter(overcategory__name='Modeling').order_by('name').all(),
             'c_sculptures': Category.objects.filter(overcategory__name='Sculpture').order_by('name').all(),
