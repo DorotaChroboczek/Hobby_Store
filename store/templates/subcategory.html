@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="path">
+        <p class="path-text">
+            <a href="{% url 'store:home' %}">Store</a>
+            / <a href="{% url 'store:category' category.id %}">{{ category.name }}</a>
+            / <a href="{% url 'store:subcategory' c_id=category.id sc_id=subcategory.id %}">{{ subcategory.name }}</a>
+        </p>
+    </div>
+
+    <div class="category-box">
+        <p class="category-name">{{ category.name }}</p>
+    </div>
+
+    <div class="row">
+        {% for meta_product in meta_products %}
+
+            <div class="col-lg-4">
+                <img class="img-thumbnail" alt="..." src="{{ meta_product.imageURL }}">
+                <div class="box-element product">
+                    <p><strong>{{ meta_product.name }}</strong></p>
+                    <hr>
+                    <a class="btn btn-outline-success"
+                       href="{% url 'store:meta_product' c_id=category.id sc_id=subcategory.id mp_id=meta_product.id %}">View</a>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

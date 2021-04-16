@@ -46,6 +46,14 @@ class Subcategory(Model):
     def __str__(self):
         return self.name
 
+    @property
+    def imageURL(self):
+        if self.image:
+            url = self.image.url
+        else:
+            url = ''
+        return url
+
 
 class MetaProduct(Model):
     class Meta:
@@ -60,6 +68,22 @@ class MetaProduct(Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def category(self):
+        return self.subcategory.category
+
+    @property
+    def overcategory(self):
+        return self.subcategory.category.overcategory
+
+    @property
+    def imageURL(self):
+        if self.image:
+            url = self.image.url
+        else:
+            url = ''
+        return url
 
 
 class UnitOfMeasurement(Model):
