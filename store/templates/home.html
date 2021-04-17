@@ -8,14 +8,15 @@
             <div class="col-lg-4">
                 <img class="img-thumbnail" alt="..." src="{{ meta_product.imageURL }}">
                 <div class="box-element product">
-                    <p class="meta_product-name"><strong>{{ meta_product.name }}</strong></p>
+                    <p class="meta_product-name">
+                        <a
+                           href="{% url 'store:store_meta_product' meta_product.id %}">
+                            <strong>{{ meta_product.name }}</strong>
+                        </a>
+                    </p>
         {#            <p>{{ meta_product.overcategory }} > {{ meta_product.category }} > {{ meta_product.subcategory }}</p>#}
 {#                    <a href="{{ meta_product.get_absolute_url }}">More...</a>#}
-                    <hr>
-                    <a class="btn btn-outline-success"
-                       href="{% url 'store:store_meta_product' meta_product.id %}">
-                        View
-                    </a>
+
                 </div>
             </div>
 
