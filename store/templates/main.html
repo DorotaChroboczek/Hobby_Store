@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -44,14 +44,10 @@
       </div>
     </nav>
 
-    <nav class="navbar">
+    <nav class="navbar col-centered">
+        <img class="rounded mx-auto d-block" src="{% static 'images/under_logo.jpg' %}">
         <div class="container-fluid brand-center">
-            <a class="navbar-brand"href="{% url 'store:home' %}">Hobby Store</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="{% url 'store:home' %}">Hobby Store</a>
         </div>
     </nav>
 
