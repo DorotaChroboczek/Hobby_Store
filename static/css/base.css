@@ -287,12 +287,14 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 25px;
+	padding: 15px;
 }
 
 .category-name {
-	font-family: Mael;
-	font-weight: 300;
-	font-size: 27px;
+	font-family: 'Bad Script', msbm10, serif;
+	font-weight: 500;
+	font-size: 37px;
 	color: darkolivegreen;
 	justify-content: center;
 	align-items: center;
