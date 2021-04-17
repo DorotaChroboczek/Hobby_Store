@@ -308,10 +308,20 @@ body{
 	display: block;
 }
 
-.container-fluid > .navbar-brand {
+.navbar > .brand-center {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.navbar > .brand-center > .navbar-brand {
 	font-family: Mael;
-	font-size: 33px;
+	font-size: 47px;
 	color: darkolivegreen;
+}
+
+.brand-center {
+	margin: 40px;
 }
 
 .nav-item > .nav-link {
