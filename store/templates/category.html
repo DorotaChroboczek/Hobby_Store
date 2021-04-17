@@ -18,7 +18,7 @@
             <div class="col-lg-4">
                 <img class="img-thumbnail" alt="..." src="{{ subcategory.imageURL }}">
                 <div class="box-element product">
-                    <p><strong>{{ subcategory.name }}</strong></p>
+                    <p class="subcategory-name"><strong>{{ subcategory.name }}</strong></p>
                     <hr>
                     <a class="btn btn-outline-success" href="{% url 'store:subcategory' c_id=category.id sc_id=subcategory.id %}">View</a>
                 </div>
