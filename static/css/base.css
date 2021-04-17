@@ -486,6 +486,7 @@ label > .product-type, .product-availability {
 	color: rebeccapurple;
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
+	text-decoration: none;
 }
 
 .navbar-expand-lg {
