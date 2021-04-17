@@ -43,6 +43,7 @@ body{
 .thumbnail {
 	height: 426px;
 	width: 640px;
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 }
 
 /*height: 320px;
