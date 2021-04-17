@@ -175,6 +175,12 @@ body{
 	width: 100px;
 }
 
+.dropdown-item {
+	font-family: 'Raleway', sans-serif;;
+	font-size: 17px;
+	color: darkolivegreen;
+}
+
 .form-field {
 	width:250px;
 	display: inline-block;
