@@ -222,26 +222,6 @@ body{
 	display: block;
 }
 
-.navbar {
-	position: relative;
-	justify-content: center;
-	align-items: center;
-}
-
-.navbar > .brand-center {
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-}
-
-.navbar > .brand-center > .navbar-brand {
-	font-family: Mael;
-	font-size: 97px;
-	letter-spacing: 0.3em;
-	text-align: center;
-	color: darkolivegreen;
-}
-
 .nav-item > .nav-link {
 	font-family: 'Raleway', sans-serif;;
 	font-size: 17px;
