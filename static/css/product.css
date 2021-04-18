@@ -1,3 +1,24 @@
+.row {
+	margin: 0 26px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.col-lg-4 {
+	width: 536px;
+}
+
+.col-lg-4 > .img-thumbnail, .product {
+	justify-content: center;
+	align-items: center;
+}
+
+.product_site {
+	justify-content: center;
+	align-content: center;
+}
+
 .path-text > a {
 	color: rebeccapurple;
 	font-family: 'Raleway', sans-serif;
