@@ -19,6 +19,11 @@
 	align-content: center;
 }
 
+.path {
+	margin-left: 59px;
+}
+
+
 .path-text > a {
 	color: rebeccapurple;
 	font-family: 'Raleway', sans-serif;
