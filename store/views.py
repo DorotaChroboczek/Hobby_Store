@@ -4,6 +4,8 @@ from django.views.generic import ListView
 
 from .models import *
 
+from .utils import *
+
 
 class HomeView(ListView):
     template_name = 'home.html'
@@ -132,3 +134,18 @@ class StoreMetaProductView(ListView):
             'c_sales': Category.objects.filter(overcategory__name='Sales').order_by('name').all()
         }
         return context
+
+
+def cart(request):
+    data = cart_data(request)
+
+    cart_items = data['cart_items']
+    order = data['order']
+    items = data['items']
+
+    context = {
+        'cart_items': cart_items,
+        'items': items,
+        'order': order
+    }
+    return render(request, 'cart.html', context)
