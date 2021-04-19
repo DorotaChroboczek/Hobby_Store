@@ -109,6 +109,19 @@ class Product(Model):
     price = DecimalField(max_digits=6, decimal_places=2)
     availability = IntegerField(null=False, blank=False)
 
+    @property
+    def name(self):
+        return self.meta_product.name
+
+    @property
+    def imageURL(self):
+        image = self.meta_product.image
+        if image:
+            url = self.meta_product.image.url
+        else:
+            url = ''
+        return url
+
 
 class ProductPromotion(Model):
     product = OneToOneField(Product, on_delete=CASCADE)
