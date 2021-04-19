@@ -68,13 +68,13 @@ body{
 	color: darkolivegreen;
 }
 
-form {
-	margin-right: -500px;
-}
+/*form {*/
+/*	margin-right: -500px;*/
+/*}*/
 
-.navbar-expand-lg > .container-fluid > .collapse > form {
-	justify-content: center;
-}
+/*.navbar-expand-lg > .container-fluid > .collapse > form {*/
+/*	justify-content: center;*/
+/*}*/
 
 .form-field {
 	width: 250px;
