@@ -157,6 +157,10 @@ class Order(Model):
     def __str__(self):
         return str(self.id)
 
+    @property
+    def order_items(self):
+        order_items = self.orderitem_set.all()
+        return order_items
 
     @property
     def cart_total(self):
