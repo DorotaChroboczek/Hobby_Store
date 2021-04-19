@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Overcategory, Category, Subcategory, MetaProduct, \
-    UnitOfMeasurement, Product, ProductPromotion
+    UnitOfMeasurement, Product, ProductPromotion, Order
 
 
 @admin.register(Overcategory)
@@ -39,4 +39,9 @@ class ProductAdmin(admin.ModelAdmin):
 class ProductPromotionAdmin(admin.ModelAdmin):
     list_display = ('name', 'package', 'measure', 'price',
                     'standard_price', 'percentage_of_the_promotion')
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('customer', 'date_ordered', 'complete')
 

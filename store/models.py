@@ -1,5 +1,7 @@
 from django.db.models import *
 
+from accounts.models import Profile
+
 
 class Overcategory(Model):
     class Meta:
@@ -134,4 +136,10 @@ class ProductPromotion(Model):
         return value_in_percents
 
 
+class Order(Model):
+    customer = ForeignKey(Profile, on_delete=SET_NULL, null=True, blank=True)
+    date_ordered = DateTimeField(auto_now_add=True)
+    complete = BooleanField(default=False, null=True, blank=True)
 
+    def __str__(self):
+        return str(self.id)
