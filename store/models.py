@@ -143,3 +143,13 @@ class Order(Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class OrderItem(Model):
+    product = ForeignKey(Product, on_delete=SET_NULL, null=True, blank=True)
+    order = ForeignKey(Order, on_delete=SET_NULL, null=True, blank=True)
+    quantity = IntegerField(default=0, null=True, blank=True)
+    date_added = DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product.meta_product.name
