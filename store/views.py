@@ -149,3 +149,20 @@ def cart(request):
         'order': order
     }
     return render(request, 'cart.html', context)
+
+
+def checkout(request):
+    data = cart_data(request)
+
+    cart_items = data['cart_items']
+    order = data['order']
+    items = data['items']
+
+    context = {
+        'cart_items': cart_items,
+        'items': items,
+        'order': order
+    }
+    return render(request, 'checkout.html', context)
+
+

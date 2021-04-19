@@ -12,4 +12,5 @@ urlpatterns = [
     path('category/<int:c_id>/subcategory/<int:sc_id>/meta_product/<int:mp_id>', MetaProductView.as_view(), name='meta_product'),
 
     path('cart/', cart, name="cart"),
+    path('checkout/', checkout, name="checkout"),
 ]
