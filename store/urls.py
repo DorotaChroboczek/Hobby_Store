@@ -10,4 +10,6 @@ urlpatterns = [
     path('category/<int:id>/', CategoryView.as_view(), name='category'),
     path('category/<int:c_id>/subcategory/<int:sc_id>', SubcategoryView.as_view(), name='subcategory'),
     path('category/<int:c_id>/subcategory/<int:sc_id>/meta_product/<int:mp_id>', MetaProductView.as_view(), name='meta_product'),
+
+    path('cart/', cart, name="cart"),
 ]
