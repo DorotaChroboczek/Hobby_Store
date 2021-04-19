@@ -166,3 +166,8 @@ class OrderItem(Model):
 
     def __str__(self):
         return self.product.meta_product.name
+
+    @property
+    def total(self):
+        total = self.product.price * self.quantity
+        return total
