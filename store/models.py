@@ -189,3 +189,16 @@ class OrderItem(Model):
     def total(self):
         total = self.product.price * self.quantity
         return total
+
+
+class ShippingAddress(Model):
+    customer = ForeignKey(Profile, on_delete=SET_NULL, null=True, blank=True)
+    order = ForeignKey(Order, on_delete=SET_NULL, null=True, blank=True)
+    address = CharField(max_length=200, null=False)
+    city = CharField(max_length=200, null=False)
+    state = CharField(max_length=200, null=False)
+    zipcode = CharField(max_length=200, null=False)
+    date_added = DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.address
