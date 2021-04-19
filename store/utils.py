@@ -1,5 +1,6 @@
 import json
 from .models import *
+from accounts.models import Profile
 
 
 def cookie_cart(request):
@@ -46,5 +47,21 @@ def cookie_cart(request):
         except:
             pass
     return {'cart_items': cart_items, 'order': order, 'items': items}
+
+
+def cart_data(request):
+    if request.user.is_authenticated:
+        customer = request.user.profile
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cart_items = order.cart_items
+    else:
+        cookie_data = cookie_cart(request)
+        customer = None
+        cart_items = cookie_data['cart_items']
+        order = cookie_data['order']
+        items = cookie_data['items']
+    return {'customer': customer, 'cart_items': cart_items,
+            'order': order, 'items': items}
 
 
