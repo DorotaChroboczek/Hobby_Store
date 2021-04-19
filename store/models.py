@@ -153,6 +153,7 @@ class Order(Model):
     customer = ForeignKey(Profile, on_delete=SET_NULL, null=True, blank=True)
     date_ordered = DateTimeField(auto_now_add=True)
     complete = BooleanField(default=False, null=True, blank=True)
+    transaction_id = CharField(max_length=100, null=True)
 
     def __str__(self):
         return str(self.id)
