@@ -64,6 +64,12 @@ class ContextTemplateView(TemplateView):
         })
         return context
 
+
+class HomeView(ContextListView):
+    template_name = 'home.html'
+    context_object_name = 'meta_products'
+    model = MetaProduct
+
     def get_queryset(self):
         return MetaProduct.objects.all().order_by('name')
 
