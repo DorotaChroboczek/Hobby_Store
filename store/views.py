@@ -2,7 +2,7 @@ import datetime
 
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 
 from .models import *
 
@@ -37,11 +37,21 @@ class ContextListView(ListView):
         return context
 
 
+class ContextTemplateView(TemplateView):
+    model = None
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        data = cart_data(request=self.request)
+
+        cart_items = data['cart_items']
+        order = data['order']
+        items = data['items']
 
         context.update({
+            'cart_items': cart_items,
+            'items': items,
+            'order': order,
             'overcategories': Overcategory.objects.all(),
             'c_modelings': Category.objects.filter(overcategory__name='Modeling').order_by('name').all(),
             'c_sculptures': Category.objects.filter(overcategory__name='Sculpture').order_by('name').all(),
