@@ -9,10 +9,34 @@ from .models import *
 from .utils import *
 
 
-class HomeView(ListView):
-    template_name = 'home.html'
-    context_object_name = 'meta_products'
-    model = MetaProduct
+class ContextListView(ListView):
+    model = None
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        data = cart_data(request=self.request)
+
+        cart_items = data['cart_items']
+        order = data['order']
+        items = data['items']
+
+        context.update({
+            'cart_items': cart_items,
+            'items': items,
+            'order': order,
+            'overcategories': Overcategory.objects.all(),
+            'c_modelings': Category.objects.filter(overcategory__name='Modeling').order_by('name').all(),
+            'c_sculptures': Category.objects.filter(overcategory__name='Sculpture').order_by('name').all(),
+            'c_paintings': Category.objects.filter(overcategory__name='Painting').order_by('name').all(),
+            'c_photos': Category.objects.filter(overcategory__name='Photography').order_by('name').all(),
+            'c_writings': Category.objects.filter(overcategory__name='Writing').order_by('name').all(),
+            'c_landscapes': Category.objects.filter(overcategory__name='Landscape Modeling').order_by('name').all(),
+            'c_giftsets': Category.objects.filter(overcategory__name='Gift Sets').order_by('name').all(),
+            'c_sales': Category.objects.filter(overcategory__name='Sales').order_by('name').all(),
+        })
+        return context
+
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
