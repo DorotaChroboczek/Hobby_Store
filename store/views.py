@@ -74,7 +74,7 @@ class HomeView(ContextListView):
         return MetaProduct.objects.all().order_by('name')
 
 
-class CategoryView(ListView):
+class CategoryView(ContextListView):
     template_name = 'category.html'
     model = Category
 
