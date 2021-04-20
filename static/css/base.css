@@ -12,6 +12,7 @@ body{
 
 .btn:hover {
     background-color: mediumpurple;
+	/*background-color: deeppink;*/
     border: 2px solid rebeccapurple;
 }
 
