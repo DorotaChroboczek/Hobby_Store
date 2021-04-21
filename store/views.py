@@ -115,7 +115,7 @@ class MetaProductView(ContextListView):
         category = get_object_or_404(Category, id=self.kwargs['c_id'])
         subcategory = get_object_or_404(Subcategory, id=self.kwargs['sc_id'])
         meta_product = get_object_or_404(MetaProduct, id=self.kwargs['mp_id'])
-        products = Product.objects.filter(meta_product=meta_product).order_by('-availability').all()
+        products = Product.objects.filter(meta_product=meta_product).order_by('package').all()
         context.update({
             'category': category,
             'subcategory': subcategory,
@@ -132,7 +132,7 @@ class StoreMetaProductView(ContextListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         meta_product = get_object_or_404(MetaProduct, id=self.kwargs['id'])
-        products = Product.objects.filter(meta_product=meta_product).order_by('-availability').all()
+        products = Product.objects.filter(meta_product=meta_product).order_by('package').all()
         category = meta_product.category
         context.update({
             'meta_product': meta_product,
