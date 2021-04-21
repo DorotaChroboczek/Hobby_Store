@@ -94,7 +94,34 @@
 	text-align: center;
 }
 
-.box-element > .meta_product-name > a {
+.meta_product-name > a {
+	justify-content: center;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	font-size: 24px;
+	color: darkolivegreen;
+	align-items: center;
+	text-decoration: none;
+}
+
+.item-name-box {
+	display: flex;
+	align-self: center;
+}
+
+.item-name > a {
+	justify-content: center;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	font-size: 18px;
+	color: darkolivegreen;
+	align-items: center;
+	text-decoration: none;
+}
+
+.cart-row > .meta_product-name > a {
 	justify-content: center;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
