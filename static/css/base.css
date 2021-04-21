@@ -12,6 +12,7 @@ body{
 
 .btn:hover {
     background-color: mediumpurple;
+	/*background-color: deeppink;*/
     border: 2px solid rebeccapurple;
 }
 
@@ -68,11 +69,20 @@ body{
 	color: darkolivegreen;
 }
 
+/*form {*/
+/*	margin-right: -500px;*/
+/*}*/
+
+/*.navbar-expand-lg > .container-fluid > .collapse > form {*/
+/*	justify-content: center;*/
+/*}*/
+
 .form-field {
-	width:250px;
+	width: 250px;
 	display: inline-block;
 	padding: 5px;
 }
+
 .hidden {
 	display: none!important;
 }

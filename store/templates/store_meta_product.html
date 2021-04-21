@@ -22,42 +22,32 @@
         <div class="choose-box">
             <div class="packages-sizes">
                 <p>Packages sizes</p>
-                <hr>
             </div>
 
             {% for product in products %}
-            <div class="product-box" data-inline-type="radio">
+            <div class="product-box">
                 <label class="label-box">
-                    <input class="product-package" type="radio">
-                    <div class="product-type">
-                        <p>{{ product.package }} {{ product.measure }} - <strong>${{ product.price|floatformat:2 }}</strong></p>
-                    </div>
-                    <div class="product-availability">
-                        <div class="availability">
-                            <i>Availability: </i>
-                        </div>
-                        <div class="product-availability-loop">
-                            {% if product.availability >= 40 %}
-                                <p class="availability-green"><strong>A lot</strong></p>
-                            {% elif product.availability >= 20 %}
-                                <p class="availability-yellow"><strong>Still in stock...</strong></p>
-                            {% elif product.availability >= 5 %}
-                                <p class="availability-red"><strong>Last items...</strong></p>
-                            {% else %}
-                                <p class="availability-red"><strong>Sold out</strong></p>
-                            {% endif %}
-                        </div>
-                    </div>
+                    {% if product.availability >= 40 %}
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart product-type a-green">
+                            <p>{{ product.package }} {{ product.measure }} - <strong>${{ product.price|floatformat:2 }}</strong></p>
+                        </button>
+                    {% elif product.availability >= 20 %}
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart product-type a-yellow">
+                            <p>{{ product.package }} {{ product.measure }} - <strong>${{ product.price|floatformat:2 }}</strong></p>
+                        </button>
+                    {% elif product.availability >= 1 %}
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart product-type a-red">
+                            <p>{{ product.package }} {{ product.measure }} - <strong>${{ product.price|floatformat:2 }}</strong></p>
+                        </button>
+                    {% else %}
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart product-type a-grey">
+                            <p>{{ product.package }} {{ product.measure }} - <strong>${{ product.price|floatformat:2 }}</strong></p>
+                        </button>
+                    {% endif %}
                 </label>
                 <br>
             </div>
             {%  endfor %}
-
-            <div>
-            <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">
-                Add to Cart
-            </button>
-            </div>
         </div>
     </div>
 

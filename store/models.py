@@ -1,5 +1,7 @@
 from django.db.models import *
 
+from accounts.models import Profile
+
 
 class Overcategory(Model):
     class Meta:
@@ -107,6 +109,19 @@ class Product(Model):
     price = DecimalField(max_digits=6, decimal_places=2)
     availability = IntegerField(null=False, blank=False)
 
+    @property
+    def name(self):
+        return self.meta_product.name
+
+    @property
+    def imageURL(self):
+        image = self.meta_product.image
+        if image:
+            url = self.meta_product.image.url
+        else:
+            url = ''
+        return url
+
 
 class ProductPromotion(Model):
     product = OneToOneField(Product, on_delete=CASCADE)
@@ -134,4 +149,56 @@ class ProductPromotion(Model):
         return value_in_percents
 
 
+class Order(Model):
+    customer = ForeignKey(Profile, on_delete=SET_NULL, null=True, blank=True)
+    date_ordered = DateTimeField(auto_now_add=True)
+    complete = BooleanField(default=False, null=True, blank=True)
+    transaction_id = CharField(max_length=100, null=True)
 
+    def __str__(self):
+        return str(self.id)
+
+    @property
+    def order_items(self):
+        order_items = self.orderitem_set.all()
+        return order_items
+
+    @property
+    def cart_total(self):
+        order_items = self.orderitem_set.all()
+        total = sum([item.total for item in order_items])
+        return total
+
+    @property
+    def cart_items(self):
+        order_items = self.orderitem_set.all()
+        total = sum([item.quantity for item in order_items])
+        return total
+
+
+class OrderItem(Model):
+    product = ForeignKey(Product, on_delete=SET_NULL, null=True, blank=True)
+    order = ForeignKey(Order, on_delete=SET_NULL, null=True, blank=True)
+    quantity = IntegerField(default=0, null=True, blank=True)
+    date_added = DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product.meta_product.name
+
+    @property
+    def total(self):
+        total = self.product.price * self.quantity
+        return total
+
+
+class ShippingAddress(Model):
+    customer = ForeignKey(Profile, on_delete=SET_NULL, null=True, blank=True)
+    order = ForeignKey(Order, on_delete=SET_NULL, null=True, blank=True)
+    address = CharField(max_length=200, null=False)
+    city = CharField(max_length=200, null=False)
+    state = CharField(max_length=200, null=False)
+    zipcode = CharField(max_length=200, null=False)
+    date_added = DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.address

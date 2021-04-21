@@ -23,7 +23,6 @@
 	margin-left: 59px;
 }
 
-
 .path-text > a {
 	color: rebeccapurple;
 	font-family: 'Raleway', sans-serif;
@@ -50,6 +49,7 @@
 	color: darkolivegreen;
 	justify-content: center;
 	align-items: center;
+	letter-spacing: 0.1em;
 }
 
 .box-element{
@@ -68,14 +68,9 @@
     border: 2px solid darkolivegreen;
     border-radius: 25px;
     font-size: 18px;
-	/*justify-content: center;*/
-	/*text-align: center;*/
-	/*align-items: center;*/
-	/*align-content: center;*/
-	/*align-self: center;*/
+
     padding: 2px;
-    margin-left: 11vw;
-	/*margin-left: 40%;*/
+    /*margin-left: 11vw;*/
 
     margin-top: 10px;
     margin-bottom: 10px;
@@ -99,7 +94,34 @@
 	text-align: center;
 }
 
-.box-element > .meta_product-name > a {
+.meta_product-name > a {
+	justify-content: center;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	font-size: 24px;
+	color: darkolivegreen;
+	align-items: center;
+	text-decoration: none;
+}
+
+.item-name-box {
+	display: flex;
+	align-self: center;
+}
+
+.item-name > a {
+	justify-content: center;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	font-size: 18px;
+	color: darkolivegreen;
+	align-items: center;
+	text-decoration: none;
+}
+
+.cart-row > .meta_product-name > a {
 	justify-content: center;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -113,20 +135,24 @@
 .meta_product-container {
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	/*justify-content: space-evenly;*/
+	/*justify-content: center;*/
+	/*justify-content: stretch;*/
+	/*justify-items: flex-start;*/
+	align-items: flex-start;
 	border-radius: 3px;
-	margin: 50px;
-	padding: 50px;
+	margin: 5px 20px;
+	padding: 5px 20px;
 }
 
 .meta_product-box {
-	width: 60%;
+	width: 70%;
 	margin: 20px;
 	padding: 30px;
 }
 
 .choose-box {
-	width: 40%;
+	width: 30%;
 	margin: 20px;
 	padding: 30px;
 }
@@ -170,30 +196,82 @@
 .meta_product-name {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 200;
-	font-size: 24px;
+	font-size: 34px;
 	color: darkolivegreen;
 	justify-content: center;
 	align-items: center;
+	letter-spacing: 0.1em;
 }
 
 label {
 	display: flex;
 }
 
-label > .product-package {
-	margin-top: 11px;
+.label-box > .product-type, .product-availability {
+	justify-content: space-around;
+	align-content: center;
+	display: flex;
 }
 
-label > .product-type, .product-availability {
-	margin-left: 9px;
-	margin-top: 5px;
-	/*margin: 0 5px 0 5px;*/
+.label-box > .product-type {
+	margin-top: 9px;
+}
+
+.label-box > .product-availability {
+	margin-top: 35px;
+}
+
+.product-type {
+	border: 8px solid deeppink;
+	width: 250px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+}
+
+.product-box > label > .a-green {
+	border-color: olivedrab;
+	/*background-color: yellowgreen;*/
+	/*background-color: greenyellow;*/
+	/*background-color: lawngreen;*/
+	/*background-color: lightgreen;*/
+	/*background-color: palegreen;*/
+}
+
+.product-box > label > .a-yellow {
+	border-color: yellow;
+	/*background-color: lightyellow;*/
+}
+
+.product-box > label > .a-red {
+	border-color: indianred;
+	/*background-color: palevioletred;*/
+}
+
+.product-box > label > .a-grey {
+	border-color: grey;
+	background-color: lightgrey;
+}
+
+.product-type > p {
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+	font-size: 19px;
+	color: darkslategrey;
 }
 
 .packages-sizes {
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
+	width: 250px;
+	height: 80px;
+	text-align: center;
 	color: darkolivegreen;
+	align-items: center;
+	letter-spacing: 0.1em;
 }
 
 .product{
@@ -205,50 +283,21 @@ label > .product-type, .product-availability {
 	font-family: 'Raleway', sans-serif;
 }
 
-.product-box > p {
-	justify-content: center;
-	align-items: center;
-}
-
 .product-availability {
 	display: flex;
 }
 
-.product-availability > .product-availability-loop {
-	margin-left: 9px;
-}
-
-.product-box > label > .product-availability > .product-availability-loop > .availability-green {
-	color: olivedrab;
-}
-
-.product-box > label > .product-availability > .product-availability-loop > .availability-yellow {
-	color: yellow;
-}
-
-.product-box > label > .product-availability > .product-availability-loop > .availability-red {
-	color: red;
-}
-
 .description-box {
-	/*width: auto;*/
-	width:1200px;
-    margin: 20px auto;
-    padding:20px;
-	/*background-color: blanchedalmond;*/
-	/*background-color: whitesmoke;*/
-    border-radius: 3px;
+	width: 60%;
+    margin: auto;
+    padding: 0 20px;
     box-shadow: 3px 2px 8px 0 rgba(0,0,0,0.75);
 }
 
 .description-box > .description-text {
-	margin: 10px;
-    padding: 20px;
+	margin-top: 30px;
+    padding: 30px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
 	color: darkolivegreen;
-}
-
-.description-text {
-	border: 1px solid olivedrab;
 }
