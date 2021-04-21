@@ -47,8 +47,33 @@ body{
     color: darkolivegreen;
 }
 
-.col-lg-6, .col-lg-8, .col-lg-12{
+.col-lg-8, .col-lg-12{
 	margin-top: 10px;
+}
+
+.checkout-row {
+	margin: 0 26px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*margin: 0 26px;*/
+}
+
+.checkout-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 30px;
+	padding: 40px;
+}
+
+.checkout-box {
+	/*margin: auto;*/
+	width: 50%;
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
 }
 
 .col-lg-4 {
