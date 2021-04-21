@@ -13,8 +13,18 @@
                 <hr>
                 {% for item in items %}
                     <div class="cart-row">
-                        <div style="flex:2"><img class="row-image" src="{{ item.product.imageURL }}"></div>
-                        <div style="flex:2"><p>{{ item.product.name }}</p></div>
+                        <div style="flex:2">
+                            <a href="{% url 'store:store_meta_product' item.product.meta_product.id %}">
+                                <img class="row-image" src="{{ item.product.imageURL }}">
+                            </a>
+                        </div>
+                        <div style="flex:2">
+                            <p class="item-name">
+                                <a href="{% url 'store:store_meta_product' item.product.meta_product.id %}">
+                                    {{ item.product.name }}
+                                </a>
+                            </p>
+                        </div>
                         <div style="flex:1"><p>${{ item.product.price|floatformat:2 }}</p></div>
                         <div style="flex:1"><p>x{{ item.quantity }}</p></div>
                     </div>
